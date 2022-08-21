@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>ULTIMATE GAME OF ROCK PAPER SCISSORS</title>
+</head>
+
+<body>
+    <h1>ROCK PAPER SCISSORS: LIFE OR DEATH</h1>
+    <h1>FIRST TO 5 WINS. CHOOSE WISELY</h1>
+
+    <script>
+        const userChoice = prompt("Pick rock, paper, or scissors");
+
+        let playerScore = 0;
+        let computerScore = 0;
+
+        function computerChoice() {
+            let number = Math.floor(Math.random() * 3);
+            if (number === 1) {
+                return('rock');
+            } else if (number === 2) {
+                return('paper');
+            } else {
+                return('scissors');
+            }
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if ((playerSelection === 'rock' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'scissors') || (playerSelection === 'scissors' && computerSelection === 'rock')) {
+                computerScore++;
+                return('You lose!');
+            } 
+            if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'paper' && computerSelection === 'rock') || (playerSelection === 'scissors' && computerSelection === 'paper')) {
+                playerScore++;
+                return('You win!');
+            } 
+            if (playerSelection === computerSelection) {
+                return('TIED. Play again!');
+            }
+        }
+        
+        console.log(playRound(userChoice, computerChoice()));
+
+        console.log("player choice: " + userChoice.toLowerCase());
+        console.log("computer choice: " + computerChoice());
+        console.log("player score: " + playerScore); 
+        console.log("computer score: " + computerScore);
+
+    </script>
+</body>
+</html>
