@@ -9,47 +9,26 @@
 </head>
 
 <body>
-    <h1>ROCK PAPER SCISSORS: LIFE OR DEATH</h1>
-    <h1>FIRST TO 5 WINS. CHOOSE WISELY</h1>
+    <h1>ROCK PAPER SCISSORS: LIFE OR DEATH.</h1>
+    <h1 class="endResults">FIRST TO 5 WINS. CHOOSE WISELY.</h1>
 
-    <script>
-        const userChoice = prompt("Pick rock, paper, or scissors");
+    <div class="button-container">
+        <button id="1" class="rock icon"><img src="icons/rock.png" height="100px" width="100px"></button>
+        <button id="2" class="paper icon"><img src="icons/document.png" height="100px" width="100px"></button>
+        <button id="3" class="scissors icon"><img src="icons/scissors.png" height="100px" width="100px"></button>
+        <button id="4" class="restart icon" title="restart"><img src="icons/undo.png" height="100px" width="100px"></button>
+    </div>
 
-        let playerScore = 0;
-        let computerScore = 0;
+    <div class="roundResults">Round results will be shown here.</div>
 
-        function computerChoice() {
-            let number = Math.floor(Math.random() * 3);
-            if (number === 1) {
-                return('rock');
-            } else if (number === 2) {
-                return('paper');
-            } else {
-                return('scissors');
-            }
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            if ((playerSelection === 'rock' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'scissors') || (playerSelection === 'scissors' && computerSelection === 'rock')) {
-                computerScore++;
-                return('You lose!');
-            } 
-            if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'paper' && computerSelection === 'rock') || (playerSelection === 'scissors' && computerSelection === 'paper')) {
-                playerScore++;
-                return('You win!');
-            } 
-            if (playerSelection === computerSelection) {
-                return('TIED. Play again!');
-            }
-        }
-        
-        console.log(playRound(userChoice, computerChoice()));
-
-        console.log("player choice: " + userChoice.toLowerCase());
-        console.log("computer choice: " + computerChoice());
-        console.log("player score: " + playerScore); 
-        console.log("computer score: " + computerScore);
-
-    </script>
+    <div class="scores-container">
+        <div class="scores" id="box">
+            <p class="playerPoints"></p>
+            <p class="computerPoints"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+    
 </body>
 </html>
