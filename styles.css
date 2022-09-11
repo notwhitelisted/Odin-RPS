@@ -1,6 +1,19 @@
+body {
+    font-size: 20px;
+    font-family: 'MedievalSharp', cursive;
+    background-color: #52796F;
+    color: #FAEDCD;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
 h1 {
     text-align: center;
-
 }
 
 .button-container {
@@ -8,15 +21,19 @@ h1 {
 }
 
 button {
-    border-radius: 25px;
+    border-radius: 1.5rem;
     margin: 5px;
+    outline: none;
+    border: none;
 }
 
 .roundResults {
     text-align: center;
+    margin-top: 2rem;
 }
 
 .scores-container {
     text-align: center;
 }
+
 
