@@ -80,10 +80,10 @@ function playRound(playerSelection, computerSelection) {
 function isGameOver() {
     if (playerScore === 5 || computerScore === 5) {
         if (playerScore > computerScore) {
-            endResults.textContent =  'GAME OVER. EZ W';
+            endResults.textContent =  'GAME OVER. YOU WIN';
             buttons.forEach((button) => { button.removeEventListener('click', playerChoice)});
         } else if (computerScore > playerScore) {
-            endResults.textContent = 'GAME OVER. FAT L'
+            endResults.textContent = 'GAME OVER. YOU LOSE'
             buttons.forEach((button) => { button.removeEventListener('click', playerChoice)});
         } else {
             endResults.textContent = 'TIE. GO AGAIN'
